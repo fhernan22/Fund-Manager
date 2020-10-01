@@ -1,0 +1,41 @@
+.transparent {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.header-container {
+  max-width: 1150px !important;
+
+  .nav-container {
+    padding-top: 20px;
+
+    .navbar-nav {
+      align-items: center;
+    }
+
+    .nav-item {
+      margin-right: 0.5rem;
+      font-weight: 500;
+      font-size: 0.975rem;
+      color: rgba(255, 255, 255, 0.95);
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        font-weight: 500;
+      }
+
+      .nav-link:hover {
+        color: #ced4da;
+      }
+    }
+  }
+
+  .login {
+    font-weight: 500;
+  }
+
+  .login:hover {
+    border: 1px solid white !important;
+  }
+}
