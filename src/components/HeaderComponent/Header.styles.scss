@@ -1,10 +1,13 @@
-.transparent {
-  background: none !important;
-  box-shadow: none !important;
-}
-
 .header-container {
-  max-width: 1150px !important;
+  max-width: 1250px !important;
+
+  .logo {
+    transition: transform 1s;
+  }
+
+  .logo:hover {
+    transform: rotate(360deg);
+  }
 
   .nav-container {
     padding-top: 20px;
@@ -37,5 +40,6 @@
 
   .login:hover {
     border: 1px solid white !important;
+    color: #ced4da;
   }
 }
