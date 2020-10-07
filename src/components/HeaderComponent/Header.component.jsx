@@ -3,17 +3,17 @@ import "./Header.styles.scss";
 
 import { Link } from "react-router-dom";
 
-import Container from "@material-ui/core/Container";
+// import Container from "@material-ui/core/Container";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 
-import { Navbar } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 
 import LoginModal from "../LoginComponent/LoginModal.component";
 
 const Header = () => {
   return (
     <header>
-      <Container className="header-container" maxWidth={false}>
+      <Container className="header-container">
         <Navbar expand="lg" className="transparent nav-container">
           <Navbar.Brand href="#home">
             <DonutLargeIcon

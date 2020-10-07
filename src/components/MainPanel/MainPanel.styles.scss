@@ -1,0 +1,30 @@
+.content-full-width {
+  padding-left: 130px !important;
+
+  transition: 0.25s;
+
+  @media (max-width: 992px) {
+    transform: translateX(155px);
+    overflow-x: hidden;
+    // padding-left: 280px !important;
+
+    transition: 0.5s;
+  }
+}
+
+.content-short-width {
+  padding-left: 290px !important;
+
+  transition: 0.25s;
+
+  @media (max-width: 992px) {
+    overflow-x: hidden;
+    transform: translateX(0px);
+    padding-left: 30px !important;
+    transition: 0.5s;
+  }
+}
+
+.main-panel {
+  overflow-x: hidden;
+}

@@ -1,8 +1,17 @@
 .header-container {
   max-width: 1250px !important;
 
+  .navbar-brand {
+    position: relative !important;
+  }
+
+  .navbar {
+    background: none;
+  }
+
   .logo {
     transition: transform 1s;
+    position: relative;
   }
 
   .logo:hover {

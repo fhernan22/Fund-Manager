@@ -1,18 +1,20 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import { auth } from "../../firebase/firebase.utils";
+
+import Sidebar from "../SidebarComponent/Sidebar.component";
+import ThemeSettings from "../ThemeSetting/ThemeSettings.component";
+import MainPanel from "../MainPanel/MainPanel.component";
+
+import { ThemeProvider } from "../../contexts/globalThemeContext";
 
 const Dashboard = () => {
   return (
-    <Button
-      variant="contained"
-      color="secondary"
-      onClick={() => {
-        auth.signOut();
-      }}
-    >
-      Secondary
-    </Button>
+    <>
+      <ThemeProvider>
+        <Sidebar />
+        <MainPanel />
+        <ThemeSettings />
+      </ThemeProvider>
+    </>
   );
 };
 
