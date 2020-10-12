@@ -1,16 +1,30 @@
 import React, { useContext } from "react";
+import { Switch, Redirect, Route } from "react-router-dom";
 
 import { globalThemeContext } from "../../contexts/globalThemeContext";
 import AdminNavbar from "../AdminNavbar/AdminNavbar.component";
 
-import { Row, Col, Card } from "react-bootstrap";
-
 import "./MainPanel.styles.scss";
+
+import routes from "../../utils/routes";
 
 const MainPanel = () => {
   const { sidebarTheme, currentTheme, sidebarMini } = useContext(
     globalThemeContext
   );
+
+  const getRoutes = (routes) => {
+    return routes.map((prop, key) => {
+      if (prop.collapse) {
+        return getRoutes(prop.views);
+      }
+      if (prop.path !== "/dashboard") {
+        return <Route path={prop.path} component={prop.component} key={key} />;
+      } else {
+        return null;
+      }
+    });
+  };
 
   return (
     <>
@@ -29,13 +43,10 @@ const MainPanel = () => {
             sidebarMini ? "content-full-width" : "content-short-width"
           }`}
         >
-          <Row>
-            <Col xs="12">
-              <Card className="card-chart">
-                <Card.Header></Card.Header>
-              </Card>
-            </Col>
-          </Row>
+          <Switch>
+            {getRoutes(routes)}
+            <Redirect from="*" to="/dashboard" />
+          </Switch>
         </div>
       </div>
     </>

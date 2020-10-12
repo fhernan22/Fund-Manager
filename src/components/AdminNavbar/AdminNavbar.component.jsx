@@ -14,7 +14,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import { AuthContext } from "../../contexts/authContext";
 
@@ -46,6 +46,8 @@ const AdminNavbar = () => {
   const { currentUser } = useContext(AuthContext);
   const { sidebarMini } = useContext(globalThemeContext);
   const dispatch = useContext(globalThemeDispatchContext);
+  const [collapseOpen, setCollapse] = useState(false);
+  const [navColor, setNavColor] = useState("navbar-transparent");
 
   const toggleSidebarMini = () => {
     dispatch({
@@ -54,13 +56,33 @@ const AdminNavbar = () => {
     });
   };
 
+  const toggleNavBgColor = () => {
+    if (window.innerWidth < 993 && collapseOpen) {
+      setNavColor("bg-white");
+    } else {
+      setNavColor("navbar-transparent");
+    }
+  };
+
+  const toggleCollapse = () => {
+    setCollapse(!collapseOpen);
+
+    if (collapseOpen) {
+      setNavColor("navbar-transparent");
+    } else {
+      setNavColor("bg-white");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", toggleNavBgColor);
+  }, [toggleCollapse]);
+
   return (
     <>
       <Navbar
-        className={`navbar-absolute navbar-transparent ${
-          sidebarMini && window.innerWidth <= 992
-            ? "contracted-nav"
-            : "expanded-nav"
+        className={`navbar-absolute ${navColor} ${
+          sidebarMini ? "contracted-nav" : "expanded-nav"
         }`}
         expand="lg"
       >
@@ -118,12 +140,13 @@ const AdminNavbar = () => {
             data-target="#navigation"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleCollapse}
           >
             <span className="navbar-toggler-bar navbar-kebab" />
             <span className="navbar-toggler-bar navbar-kebab" />
             <span className="navbar-toggler-bar navbar-kebab" />
           </button>
-          <Collapse navbar>
+          <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav>
                 <DropdownToggle

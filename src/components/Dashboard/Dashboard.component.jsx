@@ -6,11 +6,13 @@ import MainPanel from "../MainPanel/MainPanel.component";
 
 import { ThemeProvider } from "../../contexts/globalThemeContext";
 
+import routes from "../../utils/routes";
+
 const Dashboard = () => {
   return (
     <>
       <ThemeProvider>
-        <Sidebar />
+        <Sidebar routes={routes} />
         <MainPanel />
         <ThemeSettings />
       </ThemeProvider>
