@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Switch, Redirect, Route } from "react-router-dom";
+import { Switch, Redirect, Route, Link } from "react-router-dom";
 
 import { globalThemeContext } from "../../contexts/globalThemeContext";
 import AdminNavbar from "../AdminNavbar/AdminNavbar.component";
@@ -18,8 +18,14 @@ const MainPanel = () => {
       if (prop.collapse) {
         return getRoutes(prop.views);
       }
-      if (prop.path !== "/dashboard") {
-        return <Route path={prop.path} component={prop.component} key={key} />;
+      if (prop.path === "/admin") {
+        return (
+          <Route
+            path={prop.path + prop.layout}
+            component={prop.component}
+            key={key}
+          />
+        );
       } else {
         return null;
       }
@@ -45,7 +51,7 @@ const MainPanel = () => {
         >
           <Switch>
             {getRoutes(routes)}
-            <Redirect from="*" to="/dashboard" />
+            <Redirect from="*" to="/admin/dashboard" />
           </Switch>
         </div>
       </div>

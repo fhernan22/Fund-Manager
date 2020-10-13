@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "../HeaderComponent/Header.component";
+import Header from "../../components/HeaderComponent/Header.component";
 
 import "./Home.styles.scss";
 

@@ -37,7 +37,7 @@ const Sidebar = ({ routes }) => {
           className={activeIndex === key ? "active" : ""}
           onClick={() => handleCLick(key)}
         >
-          <Link to={prop.path} data-toggle="collapse">
+          <Link to={prop.path + prop.layout} data-toggle="collapse">
             <i className={prop.icon} />
             {<p>{prop.name}</p>}
           </Link>

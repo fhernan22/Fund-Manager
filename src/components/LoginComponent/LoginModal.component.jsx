@@ -48,7 +48,7 @@ const LoginModal = () => {
   };
 
   if (currentUser) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/admin" />;
   }
 
   return (

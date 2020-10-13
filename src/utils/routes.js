@@ -3,18 +3,18 @@ import Markets from "../components/MarketsComponent/Markets.component";
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "/admin",
     name: "Dashboard",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
-    layout: "",
+    layout: "/dashboard",
   },
   {
-    path: "/dashboard/markets",
+    path: "/admin",
     name: "Markets",
     icon: "tim-icons icon-chart-bar-32",
     component: Markets,
-    layout: "",
+    layout: "/markets",
   },
 ];
 

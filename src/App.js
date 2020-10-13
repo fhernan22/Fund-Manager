@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
-import Home from "./components/HomeComponent/Home.component";
-import Dashboard from "./components/Dashboard/Dashboard.component";
+import Home from "./pages/Home/Home.page";
+import Admin from "./pages/Admin/Admin.page";
 
 import { AuthProvider } from "./contexts/authContext";
 
@@ -16,7 +16,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <PrivateRoute path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/admin" component={Admin} />
           </Switch>
         </Router>
       </div>
