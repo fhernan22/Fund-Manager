@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Switch, Redirect, Route, Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Switch, Redirect, Route, useHistory } from "react-router-dom";
 
 import { globalThemeContext } from "../../contexts/globalThemeContext";
 import AdminNavbar from "../AdminNavbar/AdminNavbar.component";
@@ -12,6 +12,11 @@ const MainPanel = () => {
   const { sidebarTheme, currentTheme, sidebarMini } = useContext(
     globalThemeContext
   );
+
+  const pathname = useHistory().location.pathname;
+  const NavTitle = pathname
+    .substring(pathname.lastIndexOf("/") + 1, pathname.length)
+    .toUpperCase();
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
@@ -42,7 +47,7 @@ const MainPanel = () => {
         }
         data={sidebarTheme}
       >
-        <AdminNavbar />
+        <AdminNavbar title={NavTitle} />
 
         <div
           className={`content ${

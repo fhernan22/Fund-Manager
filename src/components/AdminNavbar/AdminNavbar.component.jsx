@@ -42,7 +42,7 @@ import {
 
 import "./AdminNavbar.styles.scss";
 
-const AdminNavbar = () => {
+const AdminNavbar = ({ title }) => {
   const { currentUser } = useContext(AuthContext);
   const { sidebarMini } = useContext(globalThemeContext);
   const dispatch = useContext(globalThemeDispatchContext);
@@ -130,7 +130,7 @@ const AdminNavbar = () => {
               </button>
             </div>
             <NavbarBrand href="#" onClick={(e) => e.preventDefault()}>
-              DASHBOARD
+              {title}
             </NavbarBrand>
           </div>
           <button

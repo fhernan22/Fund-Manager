@@ -1,5 +1,5 @@
-import Dashboard from "../components/Dashboard/Dashboard.component";
-import Markets from "../components/MarketsComponent/Markets.component";
+import Dashboard from "../pages/Dashboard/Dashboard.page";
+import Markets from "../pages/Markets/Markets.page";
 
 const routes = [
   {

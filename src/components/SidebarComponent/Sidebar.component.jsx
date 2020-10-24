@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { globalThemeContext } from "../../contexts/globalThemeContext";
 
