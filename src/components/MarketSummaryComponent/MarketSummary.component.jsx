@@ -28,10 +28,10 @@ const MarketSummary = () => {
       try {
         const response = await axios.all([
           axios.get(
-            `https://sandbox.iexapis.com/stable/stock/market/list/mostactive?displayPercent=true&token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
+            `https://cloud.iexapis.com/stable/stock/market/list/mostactive?displayPercent=true&token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
           ),
           axios.get(
-            `https://sandbox.iexapis.com/stable/stock/market/list/gainers?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
+            `https://cloud.iexapis.com/stable/stock/market/list/gainers?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
           ),
         ]);
         setData({ mostActive: response[0].data, topGainers: response[1].data });

@@ -20,7 +20,7 @@ const MarketToday = ({ indexName }) => {
     operation.attempt((currentAttempt) => {
       axios
         .get(
-          `https://sandbox.iexapis.com/stable/stock/${indexName}/chart/dynamic?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
+          `https://cloud.iexapis.com/stable/stock/${indexName}/chart/dynamic?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
         )
         .then((response) => setHistoricalData(response.data))
         .catch((err) => {

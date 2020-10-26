@@ -20,7 +20,7 @@ const FullWidthAreaChart = ({ stockSymbol }) => {
   useEffect(() => {
     axios
       .get(
-        `https://sandbox.iexapis.com/stable/stock/${stockSymbol}/chart/dynamic?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
+        `https://cloud.iexapis.com/stable/stock/${stockSymbol}/chart/dynamic?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
       )
       .then((response) => {
         console.log(response);
