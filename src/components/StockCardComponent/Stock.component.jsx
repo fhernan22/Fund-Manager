@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 
 const StockCard = ({ stockData }) => {
-  console.log(stockData);
   return (
     <Col lg="3" md="6">
       <Card className="card-stats">

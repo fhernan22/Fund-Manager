@@ -61,7 +61,7 @@ const AreaChart = ({ data, range }) => {
     },
   };
 
-  //   console.log(data);
+  // console.log(data);
 
   let chart = {
     data: (canvas) => {

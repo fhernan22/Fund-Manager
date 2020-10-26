@@ -18,16 +18,8 @@ import {
 
 const Markets = () => {
   const [activeIndex, setActiveIndex] = useState("SPY");
-  // useEffect(() => {
-  //   fetch(
-  //     `https://sandbox.iexapis.com/stable/stock/dia/quote?token=${process.env.REACT_APP_IEX_PUBLISHABLE_KEY}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data));
-  // }, []);
 
   return (
-    // <MarketToday indexName="hello" />
     <>
       <Row>
         <Col xs="12">
@@ -116,32 +108,6 @@ const Markets = () => {
       </Row>
       <MarketSummary />
     </>
-    // <Row>
-    //   <Col lg="2" md="4">
-    //     <Card className="card-stats">
-    //       <CardBody>
-    //         <Row>
-    //           <Col xs="7">
-    //             <div className="numbers">
-    //               <p className="card-category textCenter">AAPL</p>
-    //               <CardTitle tag="h4" className="bullish">
-    //                 +5.32%
-    //               </CardTitle>
-    //             </div>
-    //           </Col>
-    //           <Col xs="5">
-    //             <div
-    //               className="info-icon icon-warning"
-    //               style={{ background: "none" }}
-    //             >
-    //               <i className="tim-icons icon-minimal-up bullish" />
-    //             </div>
-    //           </Col>
-    //         </Row>
-    //       </CardBody>
-    //     </Card>
-    //   </Col>
-    // </Row>
   );
 };
 
